@@ -1,0 +1,29 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: powerstore1k-iscsi
+  uid: 86245c0f-f222-42c0-a06e-3059d7662e5a
+  resourceVersion: '30219589'
+  creationTimestamp: '2022-03-29T06:10:17Z'
+  annotations:
+    description: powerstore 1k iscsi
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: storage.k8s.io/v1
+      time: '2022-03-29T06:10:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:allowVolumeExpansion': {}
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:description': {}
+        'f:provisioner': {}
+        'f:reclaimPolicy': {}
+        'f:volumeBindingMode': {}
+provisioner: csi-powerstore.dellemc.com
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+

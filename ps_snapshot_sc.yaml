@@ -1,0 +1,20 @@
+apiVersion: snapshot.storage.k8s.io/v1
+deletionPolicy: Delete
+driver: csi-powerstore.dellemc.com
+kind: VolumeSnapshotClass
+metadata:
+  creationTimestamp: '2022-04-01T06:52:31Z'
+  generation: 1
+  managedFields:
+    - apiVersion: snapshot.storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:deletionPolicy': {}
+        'f:driver': {}
+      manager: Mozilla
+      operation: Update
+      time: '2022-04-01T06:52:31Z'
+  name: powerstore-snapshot
+  resourceVersion: '32856859'
+  uid: 4b8d0759-092c-43fd-8a98-a3eb70c2243a
+
