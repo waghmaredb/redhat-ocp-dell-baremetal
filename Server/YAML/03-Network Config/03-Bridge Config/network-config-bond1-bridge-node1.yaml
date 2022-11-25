@@ -1,0 +1,114 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: master0-pxbridges
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: "ocp-node1"
+  desiredState:
+    interfaces:
+    - name: br251
+      description: Linux bridge with bond1.251 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 192.168.251.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.251
+    - name: br252
+      description: Linux bridge with bond1.252 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 192.168.252.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.252
+    - name: br253
+      description: Linux bridge with bond1.253 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 192.168.253.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.253
+    - name: br254
+      description: Linux bridge with bond1.254 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 192.168.254.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.254
+    - name: br1304
+      description: Linux bridge with bond1.1304 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 172.24.188.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.1304
+    - name: br104
+      description: Linux bridge with bond1.104 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 192.168.104.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.104
+    - name: br1300
+      description: Linux bridge with bond1.1300 as a port
+      type: linux-bridge
+      state: up
+      ipv4:
+        address:
+        - ip: 172.24.56.201
+          prefix-length: 24
+        enabled: true
+      bridge:
+        options:
+          stp:
+            enabled: false
+        port:
+        - name: bond1.1300

@@ -1,0 +1,72 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: vlan-tagging-pxnetworks-on-master0-bond1-interface
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: "ocp-node1"
+  desiredState:
+    interfaces:
+    - name: bond1.251
+      description: SIO-Data1 VLAN 251 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 251
+    - name: bond1.252
+      description: SIO-Data2 VLAN 252 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 252
+    - name: bond1.253
+      description: SIO-Data3 VLAN 253 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 253
+    - name: bond1.254
+      description: SIO-Data4 VLAN 254 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 254
+    - name: bond1.1304
+      description: Powerflex Mgmt VLAN 1304 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 1304
+    - name: bond1.104
+      description: OS-Installation VLAN 104 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 104
+    - name: bond1.1300
+      description: Hardware Mgmt VLAN 1300 using bond1
+      type: vlan
+      state: up
+      ipv4:
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 1300
