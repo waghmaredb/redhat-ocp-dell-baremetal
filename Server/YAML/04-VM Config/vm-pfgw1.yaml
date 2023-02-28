@@ -1,0 +1,48 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  labels:
+    kubevirt.io/vm: vm-pfgw1
+  name: vm-pfgw1
+spec:
+  dataVolumeTemplates:
+  - metadata:
+      name: pfgw1-dv
+    spec:
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 30Gi
+        storageClassName: hostpath-provisioner
+      source:
+        http:
+          url: "http://10.36.67.73/PflexVM-1.qcow2"
+          secretRef: ""
+          certConfigMap: ""
+    status: {}
+  running: true
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-pfgw1
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: "ocp-node2"
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: datavolumedisk30
+        machine:
+        resources:
+          requests:
+            memory: 8Gi
+      terminationGracePeriodSeconds: 180
+      volumes:
+      - dataVolume:
+          name: pfgw1-dv
+        name: datavolumedisk30
+status: {}

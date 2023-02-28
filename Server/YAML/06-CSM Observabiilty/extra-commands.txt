@@ -1,0 +1,4 @@
+oc adm policy add-scc-to-user privileged -z cert-manager-startupapicheck -n karavi
+oc adm policy add-scc-to-user privileged -z cert-manager-cainjector -n karavi
+oc adm policy add-scc-to-user privileged -z cert-manager-webhook -n karavi
+oc adm policy add-scc-to-user privileged -z cert-manager -n karavi
