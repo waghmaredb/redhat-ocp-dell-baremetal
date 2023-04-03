@@ -1,9 +1,0 @@
-apiVersion: snapshot.storage.k8s.io/v1
-kind: VolumeSnapshot
-metadata:
-  name: test-app-pvc-snapshot
-  namespace: default
-spec:
-  source:
-    persistentVolumeClaimName: test-app-pvc
-  volumeSnapshotClassName: vxflexos-snapclass
